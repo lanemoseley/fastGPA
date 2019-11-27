@@ -13,6 +13,8 @@
 		2C5C7507238E397300A1A141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5C7505238E397300A1A141 /* Main.storyboard */; };
 		2C5C7509238E397800A1A141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C5C7508238E397800A1A141 /* Assets.xcassets */; };
 		2C5C750C238E397800A1A141 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5C750A238E397800A1A141 /* LaunchScreen.storyboard */; };
+		2C5C7514238E50B200A1A141 /* gpaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C7513238E50B200A1A141 /* gpaCalculator.swift */; };
+		2C5C7516238E5E1C00A1A141 /* courseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C7515238E5E1C00A1A141 /* courseInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2C5C7508238E397800A1A141 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C5C750B238E397800A1A141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C5C750D238E397800A1A141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C5C7513238E50B200A1A141 /* gpaCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpaCalculator.swift; sourceTree = "<group>"; };
+		2C5C7515238E5E1C00A1A141 /* courseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				2C5C7508238E397800A1A141 /* Assets.xcassets */,
 				2C5C750A238E397800A1A141 /* LaunchScreen.storyboard */,
 				2C5C750D238E397800A1A141 /* Info.plist */,
+				2C5C7513238E50B200A1A141 /* gpaCalculator.swift */,
+				2C5C7515238E5E1C00A1A141 /* courseInfo.swift */,
 			);
 			path = "GPA Calculator";
 			sourceTree = "<group>";
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5C7514238E50B200A1A141 /* gpaCalculator.swift in Sources */,
 				2C5C7504238E397300A1A141 /* ViewController.swift in Sources */,
 				2C5C7500238E397300A1A141 /* AppDelegate.swift in Sources */,
 				2C5C7502238E397300A1A141 /* SceneDelegate.swift in Sources */,
+				2C5C7516238E5E1C00A1A141 /* courseInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

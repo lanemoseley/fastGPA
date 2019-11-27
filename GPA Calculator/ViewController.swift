@@ -27,55 +27,76 @@ class ViewController: UIViewController {
     // resulting gpa cell
     @IBOutlet weak var result: UILabel!
     
-    // grade options
-    let grades = ["A", "B", "C", "D", "F"]
-    let credits = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]
+    // instantiate gpa calculator
+    let gpaCalc = gpaCalculator()
+    
+    // function to initiate an update of the gpa
+    func updateGPA() {
+        // collect grades and credits
+        var grades: [courseInfo] = [courseInfo(grade: grade_1.text!, credits: Double(credits_1.text!)!),
+                                    courseInfo(grade: grade_2.text!, credits: Double(credits_2.text!)!),
+                                    courseInfo(grade: grade_3.text!, credits: Double(credits_3.text!)!),
+                                    courseInfo(grade: grade_4.text!, credits: Double(credits_4.text!)!),
+                                    courseInfo(grade: grade_5.text!, credits: Double(credits_5.text!)!)]
+        
+        // update gpa
+        result.text = gpaCalc.getGPA(gradeInfo: grades)
+    }
     
     // credit steppers
     @IBAction func credit_stepper_1(_ sender: UIStepper) {
-        credits_1.text = String(credits[Int(sender.value)])
+        credits_1.text = String(gpaCalc.credits[Int(sender.value)])
+        updateGPA()
     }
     
     @IBAction func credit_stepper_2(_ sender: UIStepper) {
-        credits_2.text = String(credits[Int(sender.value)])
+        credits_2.text = String(gpaCalc.credits[Int(sender.value)])
+        updateGPA()
     }
     
     @IBAction func credit_stepper_3(_ sender: UIStepper) {
-        credits_3.text = String(credits[Int(sender.value)])
+        credits_3.text = String(gpaCalc.credits[Int(sender.value)])
+        updateGPA()
     }
     
     @IBAction func credit_stepper_4(_ sender: UIStepper) {
-        credits_4.text = String(credits[Int(sender.value)])
+        credits_4.text = String(gpaCalc.credits[Int(sender.value)])
+        updateGPA()
     }
     
     @IBAction func credit_stepper_5(_ sender: UIStepper) {
-        credits_5.text = String(credits[Int(sender.value)])
+        credits_5.text = String(gpaCalc.credits[Int(sender.value)])
+        updateGPA()
     }
     
     // grade steppers
     @IBAction func grade_stepper_1(_ sender: UIStepper) {
-        grade_1.text = grades[Int(sender.value)]
+        grade_1.text = gpaCalc.grades[Int(sender.value)]
+        updateGPA()
     }
     
     @IBAction func grade_stepper_2(_ sender: UIStepper) {
-        grade_2.text = grades[Int(sender.value)]
+        grade_2.text = gpaCalc.grades[Int(sender.value)]
+        updateGPA()
     }
     
     @IBAction func grade_stepper_3(_ sender: UIStepper) {
-        grade_3.text = grades[Int(sender.value)]
+        grade_3.text = gpaCalc.grades[Int(sender.value)]
+        updateGPA()
     }
     
     @IBAction func grade_stepper_4(_ sender: UIStepper) {
-        grade_4.text = grades[Int(sender.value)]
+        grade_4.text = gpaCalc.grades[Int(sender.value)]
+        updateGPA()
     }
     
     @IBAction func grade_stepper_5(_ sender: UIStepper) {
-        grade_5.text = grades[Int(sender.value)]
+        grade_5.text = gpaCalc.grades[Int(sender.value)]
+        updateGPA()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 }
 
