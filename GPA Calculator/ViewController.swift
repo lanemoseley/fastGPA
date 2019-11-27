@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     // function to initiate an update of the gpa
     func updateGPA() {
         // collect grades and credits
-        var grades: [courseInfo] = [courseInfo(grade: grade_1.text!, credits: Double(credits_1.text!)!),
+        let grades: [courseInfo] = [courseInfo(grade: grade_1.text!, credits: Double(credits_1.text!)!),
                                     courseInfo(grade: grade_2.text!, credits: Double(credits_2.text!)!),
                                     courseInfo(grade: grade_3.text!, credits: Double(credits_3.text!)!),
                                     courseInfo(grade: grade_4.text!, credits: Double(credits_4.text!)!),
