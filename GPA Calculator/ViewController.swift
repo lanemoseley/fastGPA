@@ -56,53 +56,71 @@ class ViewController: UIViewController {
         cumulative_result.text = String(format: "%.3f", gpaCalc.new_cumulative_gpa)
     }
     
-    // credit steppers ////
+    /// Author: Lane Moseley
+    /// This function updates credits based on stepper value.
     @IBAction func credit_stepper_1(_ sender: UIStepper) {
         credits_1.text = String(gpaCalc.credits[Int(sender.value)])
         updateGPA()
     }
-    
+
+    /// Author: Lane Moseley
+    /// This function updates credits based on stepper value.
     @IBAction func credit_stepper_2(_ sender: UIStepper) {
         credits_2.text = String(gpaCalc.credits[Int(sender.value)])
         updateGPA()
     }
     
+    /// Author: Lane Moseley
+    /// This function updates credits based on stepper value.
     @IBAction func credit_stepper_3(_ sender: UIStepper) {
         credits_3.text = String(gpaCalc.credits[Int(sender.value)])
         updateGPA()
     }
     
+    /// Author: Lane Moseley
+    /// This function updates credits based on stepper value.
     @IBAction func credit_stepper_4(_ sender: UIStepper) {
         credits_4.text = String(gpaCalc.credits[Int(sender.value)])
         updateGPA()
     }
     
+    /// Author: Lane Moseley
+    /// This function updates credits based on stepper value.
     @IBAction func credit_stepper_5(_ sender: UIStepper) {
         credits_5.text = String(gpaCalc.credits[Int(sender.value)])
         updateGPA()
     }
     
-    // grade steppers ////
+    /// Author: Lane Moseley
+    /// This function updates grade based on stepper value.
     @IBAction func grade_stepper_1(_ sender: UIStepper) {
         grade_1.text = gpaCalc.grades[Int(sender.value)]
         updateGPA()
     }
-    
+
+    /// Author: Lane Moseley
+    /// This function updates grade based on stepper value.
     @IBAction func grade_stepper_2(_ sender: UIStepper) {
         grade_2.text = gpaCalc.grades[Int(sender.value)]
         updateGPA()
     }
     
+    /// Author: Lane Moseley
+    /// This function updates grade based on stepper value.
     @IBAction func grade_stepper_3(_ sender: UIStepper) {
         grade_3.text = gpaCalc.grades[Int(sender.value)]
         updateGPA()
     }
     
+    /// Author: Lane Moseley
+    /// This function updates grade based on stepper value.
     @IBAction func grade_stepper_4(_ sender: UIStepper) {
         grade_4.text = gpaCalc.grades[Int(sender.value)]
         updateGPA()
     }
     
+    /// Author: Lane Moseley
+    /// This function updates grade based on stepper value.
     @IBAction func grade_stepper_5(_ sender: UIStepper) {
         grade_5.text = gpaCalc.grades[Int(sender.value)]
         updateGPA()
