@@ -1,10 +1,14 @@
-//
-//  ViewController.swift
-//  GPA Calculator
-//
-//  Created by Lane Moseley on 11/26/19.
-//  Copyright © 2019 Lane Moseley. All rights reserved.
-//
+///
+/// Program Name: Semester Project, Swift
+/// Author: Lane Moseley
+/// Class: CSC 461, Programming Languages, M-01, Fall, 2019
+/// Language\Compiler: Swift 5.1
+///
+/// Description: This is a GPA Calculator app developed for iOS.  It allows the user to
+/// add grades and credit hours for up to five classes and see the resulting GPA.
+///
+/// Known Bugs: No bugs known at this time.
+///
 
 import UIKit
 
@@ -29,8 +33,9 @@ class ViewController: UIViewController {
     
     // instantiate gpa calculator
     let gpaCalc = gpaCalculator()
-    
-    // function to initiate an update of the gpa
+        
+    /// Author: Lane Moseley
+    /// This function will initiate an update of the resultant GPA
     func updateGPA() {
         // collect grades and credits
         let grades: [courseInfo] = [courseInfo(grade: grade_1.text!, credits: Double(credits_1.text!)!),
@@ -43,7 +48,7 @@ class ViewController: UIViewController {
         result.text = gpaCalc.getGPA(gradeInfo: grades)
     }
     
-    // credit steppers
+    // credit steppers ////
     @IBAction func credit_stepper_1(_ sender: UIStepper) {
         credits_1.text = String(gpaCalc.credits[Int(sender.value)])
         updateGPA()
@@ -69,7 +74,7 @@ class ViewController: UIViewController {
         updateGPA()
     }
     
-    // grade steppers
+    // grade steppers ////
     @IBAction func grade_stepper_1(_ sender: UIStepper) {
         grade_1.text = gpaCalc.grades[Int(sender.value)]
         updateGPA()

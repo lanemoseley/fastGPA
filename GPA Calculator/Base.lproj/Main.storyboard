@@ -93,7 +93,7 @@
                                     <action selector="credit_stepper_1:" destination="BYZ-38-t0r" eventType="valueChanged" id="CAC-3f-iHm"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="319-3Q-OZI">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="319-3Q-OZI">
                                 <rect key="frame" x="300" y="219" width="94" height="32"/>
                                 <connections>
                                     <action selector="grade_stepper_1:" destination="BYZ-38-t0r" eventType="valueChanged" id="RJS-ER-XxX"/>
@@ -135,25 +135,25 @@
                                     <action selector="credit_stepper_5:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hx7-gT-yYN"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qm5-Qw-MlJ">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="Qm5-Qw-MlJ">
                                 <rect key="frame" x="300" y="259" width="94" height="32"/>
                                 <connections>
                                     <action selector="grade_stepper_2:" destination="BYZ-38-t0r" eventType="valueChanged" id="4A7-dV-di5"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ljd-zh-Bi6">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="Ljd-zh-Bi6">
                                 <rect key="frame" x="300" y="299" width="94" height="32"/>
                                 <connections>
                                     <action selector="grade_stepper_3:" destination="BYZ-38-t0r" eventType="valueChanged" id="7Zg-p2-fcf"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jpb-46-s3v">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="Jpb-46-s3v">
                                 <rect key="frame" x="300" y="339" width="94" height="32"/>
                                 <connections>
                                     <action selector="grade_stepper_4:" destination="BYZ-38-t0r" eventType="valueChanged" id="OR2-tP-xVl"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="J76-Hq-8jJ">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="J76-Hq-8jJ">
                                 <rect key="frame" x="300" y="379" width="94" height="32"/>
                                 <connections>
                                     <action selector="grade_stepper_5:" destination="BYZ-38-t0r" eventType="valueChanged" id="tMF-VI-dWA"/>
