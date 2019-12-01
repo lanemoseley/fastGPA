@@ -28,7 +28,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var grade_4: UILabel!
     @IBOutlet weak var grade_5: UILabel!
     
-    // resulting gpa cell
+    // past gpa info
+    @IBOutlet weak var old_gpa_field: UITextField!
+    @IBOutlet weak var old_hours_field: UITextField!
+    
+    // resulting gpa cells
+    @IBOutlet weak var cumulative_result: UILabel!
     @IBOutlet weak var result: UILabel!
     
     // instantiate gpa calculator
@@ -45,7 +50,10 @@ class ViewController: UIViewController {
                                     courseInfo(grade: grade_5.text!, credits: Double(credits_5.text!)!)]
         
         // update gpa
-        result.text = gpaCalc.getGPA(gradeInfo: grades)
+        result.text = String(format: "%.3f", gpaCalc.getGPA(gradeInfo: grades))
+        
+        // update cumulative gpa
+        cumulative_result.text = String(format: "%.3f", gpaCalc.new_cumulative_gpa)
     }
     
     // credit steppers ////
@@ -99,9 +107,29 @@ class ViewController: UIViewController {
         grade_5.text = gpaCalc.grades[Int(sender.value)]
         updateGPA()
     }
-    
+
+    // viewDidLoad ////
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        old_hours_field.delegate = self
+        old_gpa_field.delegate = self
+    }
+    
+    // update button pressed ////
+    @IBAction func update_pressed(_ sender: Any) {
+        
+        gpaCalc.cumulative_gpa = Double(old_gpa_field.text!)!
+        
+        gpaCalc.total_hours = Double(old_hours_field.text!)!
+        
+        updateGPA()
     }
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}

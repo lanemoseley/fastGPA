@@ -12,6 +12,14 @@ class courseInfo {
     private var _credits: Double
     
     /// Author: Lane Moseley
+    /// This is the class constructor.
+    /// It initializes the class with a grade and credit hours.
+    init(grade: String, credits: Double) {
+        self._grade = grade
+        self._credits = credits
+    }
+    
+    /// Author: Lane Moseley
     /// This is a wrapper class for the _grade variable.
     /// It provides setter and getter functions for _grade.
     var grade: String {
@@ -25,13 +33,5 @@ class courseInfo {
     var credits: Double {
         get { return _credits }
         set { _credits = newValue }
-    }
-    
-    /// Author: Lane Moseley
-    /// This is the class constructor.
-    /// It initializes the class with a grade and credit hours.
-    init(grade: String, credits: Double) {
-        self._grade = grade
-        self._credits = credits
     }
 }
