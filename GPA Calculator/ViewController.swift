@@ -111,16 +111,16 @@ class ViewController: UIViewController {
     // viewDidLoad ////
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         old_hours_field.delegate = self
         old_gpa_field.delegate = self
     }
     
-    // update button pressed ////
+    /// Author: Lane Moseley
+    /// This function will initiate an update of the cumulative GPA
     @IBAction func update_pressed(_ sender: Any) {
+        if (Double(old_gpa_field.text!) == nil || Double(old_hours_field.text!) == nil) { return }
         
         gpaCalc.cumulative_gpa = Double(old_gpa_field.text!)!
-        
         gpaCalc.total_hours = Double(old_hours_field.text!)!
         
         updateGPA()
