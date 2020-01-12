@@ -295,6 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89J68TXY4C;
 				INFOPLIST_FILE = "GPA Calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "csc461.GPA-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,6 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89J68TXY4C;
 				INFOPLIST_FILE = "GPA Calculator/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "csc461.GPA-Calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";

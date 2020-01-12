@@ -5,7 +5,7 @@
 /// Language\Compiler: Swift 5.1
 ///
 /// Description: This is a GPA Calculator app developed for iOS.  It allows the user to
-/// add grades and credit hours for up to five classes and see the resulting GPA.
+/// add grades and credit hours for up to six classes and see the resulting GPA.
 ///
 /// Known Bugs: No bugs known at this time.
 ///
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var credits_3: UILabel!
     @IBOutlet weak var credits_4: UILabel!
     @IBOutlet weak var credits_5: UILabel!
+    @IBOutlet weak var credits_6: UILabel!
     
     // grade cells
     @IBOutlet weak var grade_1: UILabel!
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var grade_3: UILabel!
     @IBOutlet weak var grade_4: UILabel!
     @IBOutlet weak var grade_5: UILabel!
+    @IBOutlet weak var grade_6: UILabel!
     
     // past gpa info
     @IBOutlet weak var old_gpa_field: UITextField!
@@ -47,7 +49,8 @@ class ViewController: UIViewController {
                                     courseInfo(grade: grade_2.text!, credits: Double(credits_2.text!)!),
                                     courseInfo(grade: grade_3.text!, credits: Double(credits_3.text!)!),
                                     courseInfo(grade: grade_4.text!, credits: Double(credits_4.text!)!),
-                                    courseInfo(grade: grade_5.text!, credits: Double(credits_5.text!)!)]
+                                    courseInfo(grade: grade_5.text!, credits: Double(credits_5.text!)!),
+                                    courseInfo(grade: grade_6.text!, credits: Double(credits_6.text!)!)]
         
         // update gpa
         result.text = String(format: "%.3f", gpaCalc.getGPA(gradeInfo: grades))
@@ -59,35 +62,42 @@ class ViewController: UIViewController {
     /// Author: Lane Moseley
     /// This function updates credits based on stepper value.
     @IBAction func credit_stepper_1(_ sender: UIStepper) {
-        credits_1.text = String(gpaCalc.credits[Int(sender.value)])
+        credits_1.text = String(Int(gpaCalc.credits[Int(sender.value)]))
         updateGPA()
     }
 
     /// Author: Lane Moseley
     /// This function updates credits based on stepper value.
     @IBAction func credit_stepper_2(_ sender: UIStepper) {
-        credits_2.text = String(gpaCalc.credits[Int(sender.value)])
+        credits_2.text = String(Int(gpaCalc.credits[Int(sender.value)]))
         updateGPA()
     }
     
     /// Author: Lane Moseley
     /// This function updates credits based on stepper value.
     @IBAction func credit_stepper_3(_ sender: UIStepper) {
-        credits_3.text = String(gpaCalc.credits[Int(sender.value)])
+        credits_3.text = String(Int(gpaCalc.credits[Int(sender.value)]))
         updateGPA()
     }
     
     /// Author: Lane Moseley
     /// This function updates credits based on stepper value.
     @IBAction func credit_stepper_4(_ sender: UIStepper) {
-        credits_4.text = String(gpaCalc.credits[Int(sender.value)])
+        credits_4.text = String(Int(gpaCalc.credits[Int(sender.value)]))
         updateGPA()
     }
     
     /// Author: Lane Moseley
     /// This function updates credits based on stepper value.
     @IBAction func credit_stepper_5(_ sender: UIStepper) {
-        credits_5.text = String(gpaCalc.credits[Int(sender.value)])
+        credits_5.text = String(Int(gpaCalc.credits[Int(sender.value)]))
+        updateGPA()
+    }
+
+    /// Author: Lane Moseley
+    /// This function updates credits based on stepper value.
+    @IBAction func credit_stepper_6(_ sender: UIStepper) {
+        credits_6.text = String(Int(gpaCalc.credits[Int(sender.value)]))
         updateGPA()
     }
     
@@ -125,7 +135,14 @@ class ViewController: UIViewController {
         grade_5.text = gpaCalc.grades[Int(sender.value)]
         updateGPA()
     }
-
+    
+    /// Author: Lane Moseley
+    /// This function updates grade based on stepper value.
+    @IBAction func grade_stepper_6(_ sender: UIStepper) {
+        grade_6.text = gpaCalc.grades[Int(sender.value)]
+        updateGPA()
+    }
+    
     // viewDidLoad ////
     override func viewDidLoad() {
         super.viewDidLoad()
