@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,343 +13,300 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GPA_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semester GPA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26h-ah-E9D">
-                                <rect key="frame" x="16" y="45" width="208" height="37"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cumulative GPA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-bs-CK4">
-                                <rect key="frame" x="16" y="2" width="233" height="37"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-Up-XtG">
-                                <rect key="frame" x="299.5" y="0.0" width="59.5" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cF-k6-MJS">
-                                <rect key="frame" x="207" y="518" width="27" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EI5-re-zWz">
-                                <rect key="frame" x="207" y="481" width="27" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8Z-do-QKI">
-                                <rect key="frame" x="207" y="437" width="27" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uwk-0B-rOL">
-                                <rect key="frame" x="207" y="397" width="27" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUa-na-9wU">
-                                <rect key="frame" x="207" y="358" width="27" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="JFY-9b-HuF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grades" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fjS-yK-FWf">
-                                <rect key="frame" x="268" y="304" width="68" height="46"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vci-nQ-Fa0">
-                                <rect key="frame" x="39" y="304" width="69" height="46"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="4" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="gCg-SE-6aB">
-                                <rect key="frame" x="39" y="358" width="94" height="32"/>
-                                <connections>
-                                    <action selector="credit_stepper_1:" destination="BYZ-38-t0r" eventType="valueChanged" id="CAC-3f-iHm"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="319-3Q-OZI">
-                                <rect key="frame" x="242" y="358" width="94" height="32"/>
-                                <connections>
-                                    <action selector="grade_stepper_1:" destination="BYZ-38-t0r" eventType="valueChanged" id="RJS-ER-XxX"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="oNb-DA-c9f">
-                                <rect key="frame" x="39" y="397" width="94" height="32"/>
-                                <connections>
-                                    <action selector="credit_stepper_2:" destination="BYZ-38-t0r" eventType="valueChanged" id="xmX-ji-mcO"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="25G-79-eRD">
-                                <rect key="frame" x="39" y="437" width="94" height="32"/>
-                                <connections>
-                                    <action selector="credit_stepper_3:" destination="BYZ-38-t0r" eventType="valueChanged" id="Dgn-1A-Xhd"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="OpJ-2R-cuX">
-                                <rect key="frame" x="39" y="478" width="94" height="32"/>
-                                <connections>
-                                    <action selector="credit_stepper_4:" destination="BYZ-38-t0r" eventType="valueChanged" id="0qP-Q5-Jus"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="mlD-ph-W7J">
-                                <rect key="frame" x="39" y="518" width="94" height="32"/>
-                                <connections>
-                                    <action selector="credit_stepper_5:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hx7-gT-yYN"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="Qm5-Qw-MlJ">
-                                <rect key="frame" x="242" y="397" width="94" height="32"/>
-                                <connections>
-                                    <action selector="grade_stepper_2:" destination="BYZ-38-t0r" eventType="valueChanged" id="4A7-dV-di5"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ljd-zh-Bi6">
-                                <rect key="frame" x="242" y="437" width="94" height="32"/>
-                                <connections>
-                                    <action selector="grade_stepper_3:" destination="BYZ-38-t0r" eventType="valueChanged" id="7Zg-p2-fcf"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="Jpb-46-s3v">
-                                <rect key="frame" x="242" y="478" width="94" height="32"/>
-                                <connections>
-                                    <action selector="grade_stepper_4:" destination="BYZ-38-t0r" eventType="valueChanged" id="OR2-tP-xVl"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="J76-Hq-8jJ">
-                                <rect key="frame" x="242" y="518" width="94" height="32"/>
-                                <connections>
-                                    <action selector="grade_stepper_5:" destination="BYZ-38-t0r" eventType="valueChanged" id="tMF-VI-dWA"/>
-                                </connections>
-                            </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Coursework" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J67-rX-KT2">
-                                <rect key="frame" x="58" y="259" width="259" height="37"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1QR-Vd-Tbc">
-                                <rect key="frame" x="299.5" y="43" width="59.5" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="DFa-h3-eU9">
-                                <rect key="frame" x="39" y="558" width="94" height="32"/>
-                                <connections>
-                                    <action selector="credit_stepper_6:" destination="BYZ-38-t0r" eventType="valueChanged" id="hbk-r4-CV3"/>
-                                </connections>
-                            </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="4vj-qK-n0o">
-                                <rect key="frame" x="242" y="558" width="94" height="32"/>
-                                <connections>
-                                    <action selector="grade_stepper_6:" destination="BYZ-38-t0r" eventType="valueChanged" id="Y2m-s6-5jv"/>
-                                </connections>
-                            </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Past GPA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Adz-QG-Mu9">
-                                <rect key="frame" x="16" y="92" width="86.5" height="34"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="---" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IYM-L1-mUH">
-                                <rect key="frame" x="301" y="92" width="49" height="34"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Past Credit Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-vZ-LSC">
-                                <rect key="frame" x="16" y="132" width="165.5" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="R6c-1Z-n76"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="---" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SRa-mL-6tT">
-                                <rect key="frame" x="301" y="132" width="49" height="32"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HH-pA-wO1">
-                                <rect key="frame" x="300" y="172" width="51" height="31"/>
-                                <state key="normal" title="Update"/>
-                                <connections>
-                                    <action selector="update_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bin-QQ-pXs"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2i6-Nw-jmU">
-                                <rect key="frame" x="207" y="558" width="27" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qss-xu-Jxq">
-                                <rect key="frame" x="141" y="478" width="12.5" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7uK-gE-bbN">
-                                <rect key="frame" x="141" y="518" width="12.5" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="umr-ly-QCi">
-                                <rect key="frame" x="141" y="437" width="12.5" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkP-x6-NUy">
-                                <rect key="frame" x="141" y="358" width="12.5" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DiV-KP-owC">
-                                <rect key="frame" x="141" y="397" width="12.5" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lLW-ea-i5R">
-                                <rect key="frame" x="141" y="558" width="12.5" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vFk-eB-Rfi">
+                                <rect key="frame" x="16" y="2" width="287" height="210"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gw7-08-nsR">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cumulative GPA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xrk-bs-CK4">
+                                                <rect key="frame" x="0.0" y="0.0" width="219.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="4.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-Up-XtG">
+                                                <rect key="frame" x="227.5" y="0.0" width="59.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0zu-W9-bKn">
+                                        <rect key="frame" x="0.0" y="40" width="287" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Semester GPA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26h-ah-E9D">
+                                                <rect key="frame" x="0.0" y="0.0" width="219.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="4.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1QR-Vd-Tbc">
+                                                <rect key="frame" x="227.5" y="0.0" width="59.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sf1-VQ-uh7">
+                                        <rect key="frame" x="0.0" y="80" width="287" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Past GPA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Adz-QG-Mu9">
+                                                <rect key="frame" x="0.0" y="0.0" width="80.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="---" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IYM-L1-mUH">
+                                                <rect key="frame" x="88.5" y="0.0" width="198.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dha-cA-7rK">
+                                        <rect key="frame" x="0.0" y="130" width="287" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Past Credit Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfc-vZ-LSC">
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="---" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SRa-mL-6tT">
+                                                <rect key="frame" x="160" y="0.0" width="127" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HH-pA-wO1">
+                                        <rect key="frame" x="0.0" y="180" width="287" height="30"/>
+                                        <state key="normal" title="Update"/>
+                                        <connections>
+                                            <action selector="update_pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bin-QQ-pXs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="pbO-h3-jNb">
+                                <rect key="frame" x="67.5" y="220" width="185" height="317"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Coursework" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J67-rX-KT2">
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vWr-Ht-5nW">
+                                        <rect key="frame" x="20" y="35" width="145" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vci-nQ-Fa0">
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grades" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fjS-yK-FWf">
+                                                <rect key="frame" x="77" y="0.0" width="68" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wHw-Jz-1pB">
+                                        <rect key="frame" x="0.0" y="70" width="185" height="32"/>
+                                        <subviews>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="4" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="gCg-SE-6aB">
+                                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="32"/>
+                                                <connections>
+                                                    <action selector="credit_stepper_1:" destination="BYZ-38-t0r" eventType="valueChanged" id="CAC-3f-iHm"/>
+                                                </connections>
+                                            </stepper>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkP-x6-NUy">
+                                                <rect key="frame" x="49.5" y="0.0" width="12.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUa-na-9wU">
+                                                <rect key="frame" x="70" y="0.0" width="13" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="319-3Q-OZI">
+                                                <rect key="frame" x="91" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="grade_stepper_1:" destination="BYZ-38-t0r" eventType="valueChanged" id="RJS-ER-XxX"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lb7-M4-CbZ">
+                                        <rect key="frame" x="0.0" y="113" width="185" height="32"/>
+                                        <subviews>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="oNb-DA-c9f">
+                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="32"/>
+                                                <connections>
+                                                    <action selector="credit_stepper_2:" destination="BYZ-38-t0r" eventType="valueChanged" id="xmX-ji-mcO"/>
+                                                </connections>
+                                            </stepper>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DiV-KP-owC">
+                                                <rect key="frame" x="53.5" y="0.0" width="12.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uwk-0B-rOL">
+                                                <rect key="frame" x="74" y="0.0" width="9" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="Qm5-Qw-MlJ">
+                                                <rect key="frame" x="91" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="grade_stepper_2:" destination="BYZ-38-t0r" eventType="valueChanged" id="4A7-dV-di5"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E7F-LZ-bmx">
+                                        <rect key="frame" x="0.0" y="156" width="185" height="32"/>
+                                        <subviews>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="25G-79-eRD">
+                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="32"/>
+                                                <connections>
+                                                    <action selector="credit_stepper_3:" destination="BYZ-38-t0r" eventType="valueChanged" id="Dgn-1A-Xhd"/>
+                                                </connections>
+                                            </stepper>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="umr-ly-QCi">
+                                                <rect key="frame" x="53.5" y="0.0" width="12.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B8Z-do-QKI">
+                                                <rect key="frame" x="74" y="0.0" width="9" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ljd-zh-Bi6">
+                                                <rect key="frame" x="91" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="grade_stepper_3:" destination="BYZ-38-t0r" eventType="valueChanged" id="7Zg-p2-fcf"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gM8-Xf-wEU">
+                                        <rect key="frame" x="0.0" y="199" width="185" height="32"/>
+                                        <subviews>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="OpJ-2R-cuX">
+                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="32"/>
+                                                <connections>
+                                                    <action selector="credit_stepper_4:" destination="BYZ-38-t0r" eventType="valueChanged" id="0qP-Q5-Jus"/>
+                                                </connections>
+                                            </stepper>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qss-xu-Jxq">
+                                                <rect key="frame" x="53.5" y="0.0" width="12.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EI5-re-zWz">
+                                                <rect key="frame" x="74" y="0.0" width="9" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="Jpb-46-s3v">
+                                                <rect key="frame" x="91" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="grade_stepper_4:" destination="BYZ-38-t0r" eventType="valueChanged" id="OR2-tP-xVl"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HpV-yV-wrP">
+                                        <rect key="frame" x="0.0" y="242" width="185" height="32"/>
+                                        <subviews>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="mlD-ph-W7J">
+                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="32"/>
+                                                <connections>
+                                                    <action selector="credit_stepper_5:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hx7-gT-yYN"/>
+                                                </connections>
+                                            </stepper>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7uK-gE-bbN">
+                                                <rect key="frame" x="53.5" y="0.0" width="12.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cF-k6-MJS">
+                                                <rect key="frame" x="74" y="0.0" width="9" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="J76-Hq-8jJ">
+                                                <rect key="frame" x="91" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="grade_stepper_5:" destination="BYZ-38-t0r" eventType="valueChanged" id="tMF-VI-dWA"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pIt-Kd-Nx8">
+                                        <rect key="frame" x="0.0" y="285" width="185" height="32"/>
+                                        <subviews>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="DFa-h3-eU9">
+                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="32"/>
+                                                <connections>
+                                                    <action selector="credit_stepper_6:" destination="BYZ-38-t0r" eventType="valueChanged" id="hbk-r4-CV3"/>
+                                                </connections>
+                                            </stepper>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lLW-ea-i5R">
+                                                <rect key="frame" x="53.5" y="0.0" width="12.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2i6-Nw-jmU">
+                                                <rect key="frame" x="74" y="0.0" width="9" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" value="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="4vj-qK-n0o">
+                                                <rect key="frame" x="91" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="grade_stepper_6:" destination="BYZ-38-t0r" eventType="valueChanged" id="Y2m-s6-5jv"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gCg-SE-6aB" firstAttribute="leading" secondItem="oNb-DA-c9f" secondAttribute="leading" id="05S-LU-erF"/>
-                            <constraint firstItem="J67-rX-KT2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="0rI-Hc-ThE"/>
-                            <constraint firstItem="Adz-QG-Mu9" firstAttribute="leading" secondItem="kfc-vZ-LSC" secondAttribute="leading" id="0vt-lH-6Lb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3HH-pA-wO1" secondAttribute="trailing" constant="24" id="1R2-B6-pot"/>
-                            <constraint firstItem="SRa-mL-6tT" firstAttribute="centerX" secondItem="3HH-pA-wO1" secondAttribute="centerX" id="1gI-Ml-IXG"/>
-                            <constraint firstItem="IYM-L1-mUH" firstAttribute="top" secondItem="1QR-Vd-Tbc" secondAttribute="bottom" constant="8" id="1po-GE-FeH"/>
-                            <constraint firstItem="DiV-KP-owC" firstAttribute="baseline" secondItem="Uwk-0B-rOL" secondAttribute="baseline" id="3Dv-mr-xEB"/>
-                            <constraint firstItem="7uK-gE-bbN" firstAttribute="firstBaseline" secondItem="6cF-k6-MJS" secondAttribute="firstBaseline" id="3zK-4w-cnh"/>
-                            <constraint firstItem="kfc-vZ-LSC" firstAttribute="top" secondItem="Adz-QG-Mu9" secondAttribute="bottom" constant="6" id="4Yw-Tw-axg"/>
-                            <constraint firstItem="hkP-x6-NUy" firstAttribute="leading" secondItem="DiV-KP-owC" secondAttribute="leading" id="4pT-pj-3mz"/>
-                            <constraint firstItem="25G-79-eRD" firstAttribute="top" secondItem="oNb-DA-c9f" secondAttribute="bottom" constant="8" id="5Wa-34-89c"/>
-                            <constraint firstItem="3HH-pA-wO1" firstAttribute="top" secondItem="SRa-mL-6tT" secondAttribute="bottom" constant="8" id="5sK-Vi-Q0H"/>
-                            <constraint firstItem="rUa-na-9wU" firstAttribute="leading" secondItem="hkP-x6-NUy" secondAttribute="trailing" priority="250" constant="78" id="9Vm-2B-efm"/>
-                            <constraint firstItem="Uwk-0B-rOL" firstAttribute="top" secondItem="Qm5-Qw-MlJ" secondAttribute="top" id="9XP-ue-b33"/>
-                            <constraint firstItem="xrk-bs-CK4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="9ax-j2-NR8"/>
-                            <constraint firstItem="hkP-x6-NUy" firstAttribute="trailing" secondItem="DiV-KP-owC" secondAttribute="trailing" id="Ajd-hG-cXO"/>
-                            <constraint firstItem="J76-Hq-8jJ" firstAttribute="leading" secondItem="4vj-qK-n0o" secondAttribute="leading" id="AmH-Wt-ZUJ"/>
-                            <constraint firstItem="hEd-Up-XtG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AzI-sB-Vds"/>
-                            <constraint firstItem="7uK-gE-bbN" firstAttribute="baseline" secondItem="6cF-k6-MJS" secondAttribute="baseline" id="B7Z-qU-Y2U"/>
-                            <constraint firstItem="2i6-Nw-jmU" firstAttribute="top" secondItem="4vj-qK-n0o" secondAttribute="top" id="BM5-Mc-hDR"/>
-                            <constraint firstItem="gCg-SE-6aB" firstAttribute="top" secondItem="vci-nQ-Fa0" secondAttribute="bottom" constant="8" id="CKi-cs-mnw"/>
-                            <constraint firstItem="Ljd-zh-Bi6" firstAttribute="leading" secondItem="Jpb-46-s3v" secondAttribute="leading" id="CQ8-EH-cSr"/>
-                            <constraint firstItem="Qss-xu-Jxq" firstAttribute="top" secondItem="Jpb-46-s3v" secondAttribute="top" id="CZ2-ai-aRc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fjS-yK-FWf" secondAttribute="trailing" constant="39" id="Cat-wB-yk4"/>
-                            <constraint firstItem="OpJ-2R-cuX" firstAttribute="top" secondItem="25G-79-eRD" secondAttribute="bottom" constant="9" id="DAE-Uw-ckX"/>
-                            <constraint firstItem="vci-nQ-Fa0" firstAttribute="baseline" secondItem="fjS-yK-FWf" secondAttribute="baseline" id="Dti-KV-Xjt"/>
-                            <constraint firstItem="mlD-ph-W7J" firstAttribute="leading" secondItem="DFa-h3-eU9" secondAttribute="leading" id="GAW-23-9tg"/>
-                            <constraint firstItem="hkP-x6-NUy" firstAttribute="leading" secondItem="gCg-SE-6aB" secondAttribute="trailing" constant="8" id="GDy-xb-EJH"/>
-                            <constraint firstItem="B8Z-do-QKI" firstAttribute="bottom" secondItem="Ljd-zh-Bi6" secondAttribute="bottom" id="Gdq-BG-Flb"/>
-                            <constraint firstItem="mlD-ph-W7J" firstAttribute="top" secondItem="OpJ-2R-cuX" secondAttribute="bottom" constant="8" id="Glj-3G-8ud"/>
-                            <constraint firstItem="oNb-DA-c9f" firstAttribute="leading" secondItem="25G-79-eRD" secondAttribute="leading" id="I9c-2X-WRZ"/>
-                            <constraint firstItem="vci-nQ-Fa0" firstAttribute="firstBaseline" secondItem="fjS-yK-FWf" secondAttribute="firstBaseline" id="JS4-pD-6yG"/>
-                            <constraint firstItem="Qm5-Qw-MlJ" firstAttribute="leading" secondItem="Ljd-zh-Bi6" secondAttribute="leading" id="Jjx-oo-1B3"/>
-                            <constraint firstItem="mlD-ph-W7J" firstAttribute="top" secondItem="7uK-gE-bbN" secondAttribute="top" id="KqA-Gu-7et"/>
-                            <constraint firstItem="J67-rX-KT2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LcM-dO-oGr"/>
-                            <constraint firstItem="vci-nQ-Fa0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="MF3-S1-gyK"/>
-                            <constraint firstItem="7uK-gE-bbN" firstAttribute="leading" secondItem="lLW-ea-i5R" secondAttribute="leading" id="NOt-ia-B7x"/>
-                            <constraint firstItem="26h-ah-E9D" firstAttribute="top" secondItem="xrk-bs-CK4" secondAttribute="bottom" constant="6" id="NrU-R1-Ps7"/>
-                            <constraint firstItem="OpJ-2R-cuX" firstAttribute="leading" secondItem="mlD-ph-W7J" secondAttribute="leading" id="O5p-Bz-bLK"/>
-                            <constraint firstItem="vci-nQ-Fa0" firstAttribute="top" secondItem="J67-rX-KT2" secondAttribute="bottom" constant="8" id="Qmb-Ea-TDP"/>
-                            <constraint firstItem="J67-rX-KT2" firstAttribute="top" secondItem="3HH-pA-wO1" secondAttribute="bottom" constant="56" id="Qqg-fm-9YG"/>
-                            <constraint firstItem="DiV-KP-owC" firstAttribute="firstBaseline" secondItem="Uwk-0B-rOL" secondAttribute="firstBaseline" id="RBh-5A-V5q"/>
-                            <constraint firstItem="6cF-k6-MJS" firstAttribute="bottom" secondItem="J76-Hq-8jJ" secondAttribute="bottom" id="REd-LX-8I3"/>
-                            <constraint firstItem="hEd-Up-XtG" firstAttribute="centerX" secondItem="1QR-Vd-Tbc" secondAttribute="centerX" id="RQY-Ya-ODL"/>
-                            <constraint firstItem="DFa-h3-eU9" firstAttribute="top" secondItem="mlD-ph-W7J" secondAttribute="bottom" constant="8" id="SZq-ig-DVx"/>
-                            <constraint firstItem="xrk-bs-CK4" firstAttribute="centerY" secondItem="hEd-Up-XtG" secondAttribute="centerY" id="TM6-23-aDn"/>
-                            <constraint firstItem="Ljd-zh-Bi6" firstAttribute="leading" secondItem="B8Z-do-QKI" secondAttribute="trailing" constant="8" id="TYN-tr-oqN"/>
-                            <constraint firstItem="25G-79-eRD" firstAttribute="top" secondItem="umr-ly-QCi" secondAttribute="top" id="UAk-8Y-GeQ"/>
-                            <constraint firstItem="hkP-x6-NUy" firstAttribute="baseline" secondItem="rUa-na-9wU" secondAttribute="baseline" id="UEq-hL-FQX"/>
-                            <constraint firstItem="7uK-gE-bbN" firstAttribute="trailing" secondItem="lLW-ea-i5R" secondAttribute="trailing" id="VHj-xb-Xzd"/>
-                            <constraint firstItem="EI5-re-zWz" firstAttribute="top" secondItem="B8Z-do-QKI" secondAttribute="bottom" constant="12" id="VJm-4x-Ldg"/>
-                            <constraint firstItem="vci-nQ-Fa0" firstAttribute="leading" secondItem="gCg-SE-6aB" secondAttribute="leading" id="VyB-IL-7Nj"/>
-                            <constraint firstItem="umr-ly-QCi" firstAttribute="firstBaseline" secondItem="B8Z-do-QKI" secondAttribute="firstBaseline" id="WOA-cf-X87"/>
-                            <constraint firstItem="26h-ah-E9D" firstAttribute="leading" secondItem="Adz-QG-Mu9" secondAttribute="leading" id="XSa-sr-a3b"/>
-                            <constraint firstItem="xrk-bs-CK4" firstAttribute="leading" secondItem="26h-ah-E9D" secondAttribute="leading" id="Xxb-ag-qtT"/>
-                            <constraint firstItem="rUa-na-9wU" firstAttribute="bottom" secondItem="319-3Q-OZI" secondAttribute="bottom" id="Y8y-8J-8bK"/>
-                            <constraint firstItem="Adz-QG-Mu9" firstAttribute="bottom" secondItem="IYM-L1-mUH" secondAttribute="bottom" id="Yf3-yx-lkh"/>
-                            <constraint firstItem="IYM-L1-mUH" firstAttribute="trailing" secondItem="SRa-mL-6tT" secondAttribute="trailing" id="Z4T-1e-gBb"/>
-                            <constraint firstItem="kfc-vZ-LSC" firstAttribute="bottom" secondItem="SRa-mL-6tT" secondAttribute="bottom" id="adS-gB-cSN"/>
-                            <constraint firstItem="26h-ah-E9D" firstAttribute="centerY" secondItem="1QR-Vd-Tbc" secondAttribute="centerY" id="aur-Yc-187"/>
-                            <constraint firstItem="kfc-vZ-LSC" firstAttribute="top" secondItem="SRa-mL-6tT" secondAttribute="top" id="bLG-hn-e9R"/>
-                            <constraint firstItem="1QR-Vd-Tbc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="26h-ah-E9D" secondAttribute="trailing" id="bfF-bP-gat"/>
-                            <constraint firstItem="SRa-mL-6tT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kfc-vZ-LSC" secondAttribute="trailing" constant="8" symbolic="YES" id="cRn-lO-qw7"/>
-                            <constraint firstItem="hEd-Up-XtG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cjP-Up-kax"/>
-                            <constraint firstItem="DiV-KP-owC" firstAttribute="trailing" secondItem="umr-ly-QCi" secondAttribute="trailing" id="cuw-ov-F6Z"/>
-                            <constraint firstItem="J67-rX-KT2" firstAttribute="top" secondItem="kfc-vZ-LSC" secondAttribute="bottom" constant="95" id="dE9-JA-nL5"/>
-                            <constraint firstItem="6cF-k6-MJS" firstAttribute="top" secondItem="J76-Hq-8jJ" secondAttribute="top" id="dG4-Gq-yLX"/>
-                            <constraint firstItem="xrk-bs-CK4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dcI-L5-elB"/>
-                            <constraint firstItem="fjS-yK-FWf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vci-nQ-Fa0" secondAttribute="trailing" constant="8" symbolic="YES" id="e0E-lc-UfH"/>
-                            <constraint firstItem="oNb-DA-c9f" firstAttribute="top" secondItem="gCg-SE-6aB" secondAttribute="bottom" constant="7" id="eTD-Ez-88F"/>
-                            <constraint firstItem="hkP-x6-NUy" firstAttribute="top" secondItem="J67-rX-KT2" secondAttribute="bottom" constant="62" id="f72-bc-Z1j"/>
-                            <constraint firstItem="lLW-ea-i5R" firstAttribute="baseline" secondItem="2i6-Nw-jmU" secondAttribute="baseline" id="fXT-js-jWq"/>
-                            <constraint firstItem="Jpb-46-s3v" firstAttribute="leading" secondItem="EI5-re-zWz" secondAttribute="trailing" constant="8" id="g7L-uA-rfJ"/>
-                            <constraint firstItem="Qss-xu-Jxq" firstAttribute="trailing" secondItem="7uK-gE-bbN" secondAttribute="trailing" id="gAN-1F-2IH"/>
-                            <constraint firstItem="DiV-KP-owC" firstAttribute="leading" secondItem="umr-ly-QCi" secondAttribute="leading" id="gDd-p1-LoE"/>
-                            <constraint firstItem="B8Z-do-QKI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EI5-re-zWz" secondAttribute="leading" id="gDt-9r-agd"/>
-                            <constraint firstItem="25G-79-eRD" firstAttribute="leading" secondItem="OpJ-2R-cuX" secondAttribute="leading" id="hWo-68-GBD"/>
-                            <constraint firstItem="6cF-k6-MJS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2i6-Nw-jmU" secondAttribute="leading" id="hYh-dH-RGj"/>
-                            <constraint firstItem="EI5-re-zWz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6cF-k6-MJS" secondAttribute="leading" id="i9m-x7-iPK"/>
-                            <constraint firstItem="319-3Q-OZI" firstAttribute="leading" secondItem="Qm5-Qw-MlJ" secondAttribute="leading" id="jIA-3a-Dla"/>
-                            <constraint firstItem="hEd-Up-XtG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xrk-bs-CK4" secondAttribute="trailing" id="jkk-E5-wS1"/>
-                            <constraint firstItem="rUa-na-9wU" firstAttribute="top" secondItem="319-3Q-OZI" secondAttribute="top" id="k6g-n4-4hF"/>
-                            <constraint firstItem="oNb-DA-c9f" firstAttribute="top" secondItem="DiV-KP-owC" secondAttribute="top" id="kpb-Wr-WAs"/>
-                            <constraint firstItem="Qss-xu-Jxq" firstAttribute="leading" secondItem="7uK-gE-bbN" secondAttribute="leading" id="l7f-9c-6gF"/>
-                            <constraint firstItem="umr-ly-QCi" firstAttribute="leading" secondItem="Qss-xu-Jxq" secondAttribute="leading" id="mL2-jh-Utb"/>
-                            <constraint firstItem="3HH-pA-wO1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mMC-z3-0si"/>
-                            <constraint firstItem="umr-ly-QCi" firstAttribute="trailing" secondItem="Qss-xu-Jxq" secondAttribute="trailing" id="mPl-3E-oJg"/>
-                            <constraint firstItem="rUa-na-9wU" firstAttribute="leading" secondItem="Uwk-0B-rOL" secondAttribute="leading" id="mtB-js-WXl"/>
-                            <constraint firstItem="hkP-x6-NUy" firstAttribute="firstBaseline" secondItem="rUa-na-9wU" secondAttribute="firstBaseline" id="nuX-DC-vNi"/>
-                            <constraint firstItem="DFa-h3-eU9" firstAttribute="top" secondItem="lLW-ea-i5R" secondAttribute="top" id="okr-3l-Ydu"/>
-                            <constraint firstItem="IYM-L1-mUH" firstAttribute="leading" secondItem="SRa-mL-6tT" secondAttribute="leading" id="ps7-R1-t8c"/>
-                            <constraint firstItem="Uwk-0B-rOL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B8Z-do-QKI" secondAttribute="leading" id="qRc-lA-o7C"/>
-                            <constraint firstItem="319-3Q-OZI" firstAttribute="leading" secondItem="rUa-na-9wU" secondAttribute="trailing" constant="8" id="qx9-3S-q1a"/>
-                            <constraint firstItem="lLW-ea-i5R" firstAttribute="firstBaseline" secondItem="2i6-Nw-jmU" secondAttribute="firstBaseline" id="r8n-my-Den"/>
-                            <constraint firstItem="B8Z-do-QKI" firstAttribute="top" secondItem="Ljd-zh-Bi6" secondAttribute="top" id="rEd-Ju-zjl"/>
-                            <constraint firstItem="Uwk-0B-rOL" firstAttribute="bottom" secondItem="Qm5-Qw-MlJ" secondAttribute="bottom" id="rm0-Dz-PxR"/>
-                            <constraint firstItem="Jpb-46-s3v" firstAttribute="leading" secondItem="J76-Hq-8jJ" secondAttribute="leading" id="rro-BE-bIX"/>
-                            <constraint firstItem="OpJ-2R-cuX" firstAttribute="top" secondItem="Qss-xu-Jxq" secondAttribute="top" id="sBh-XV-hyU"/>
-                            <constraint firstItem="OpJ-2R-cuX" firstAttribute="bottom" secondItem="Qss-xu-Jxq" secondAttribute="bottom" id="swX-bX-EXj"/>
-                            <constraint firstItem="Adz-QG-Mu9" firstAttribute="top" secondItem="IYM-L1-mUH" secondAttribute="top" id="tgc-9O-STb"/>
-                            <constraint firstItem="J76-Hq-8jJ" firstAttribute="leading" secondItem="6cF-k6-MJS" secondAttribute="trailing" constant="8" id="ttP-uM-F3r"/>
-                            <constraint firstItem="6cF-k6-MJS" firstAttribute="top" secondItem="EI5-re-zWz" secondAttribute="bottom" constant="5" id="tuy-Fq-yfU"/>
-                            <constraint firstItem="IYM-L1-mUH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Adz-QG-Mu9" secondAttribute="trailing" constant="8" symbolic="YES" id="vHg-z4-g4B"/>
-                            <constraint firstItem="Qm5-Qw-MlJ" firstAttribute="leading" secondItem="Uwk-0B-rOL" secondAttribute="trailing" constant="8" id="wKr-Si-XiN"/>
-                            <constraint firstItem="2i6-Nw-jmU" firstAttribute="bottom" secondItem="4vj-qK-n0o" secondAttribute="bottom" id="ym6-ve-ppx"/>
-                            <constraint firstItem="gCg-SE-6aB" firstAttribute="top" secondItem="hkP-x6-NUy" secondAttribute="top" id="yq7-44-JfM"/>
-                            <constraint firstItem="fjS-yK-FWf" firstAttribute="trailing" secondItem="319-3Q-OZI" secondAttribute="trailing" id="yuj-vw-PUi"/>
-                            <constraint firstItem="umr-ly-QCi" firstAttribute="baseline" secondItem="B8Z-do-QKI" secondAttribute="baseline" id="z3o-5V-Ooa"/>
-                            <constraint firstItem="4vj-qK-n0o" firstAttribute="leading" secondItem="2i6-Nw-jmU" secondAttribute="trailing" constant="8" id="zB1-fL-UNn"/>
-                            <constraint firstItem="Adz-QG-Mu9" firstAttribute="top" secondItem="26h-ah-E9D" secondAttribute="bottom" constant="10" id="zLY-Np-3cI"/>
+                            <constraint firstItem="pbO-h3-jNb" firstAttribute="top" secondItem="vFk-eB-Rfi" secondAttribute="bottom" constant="8" id="Duv-43-OC6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vFk-eB-Rfi" secondAttribute="trailing" constant="17" id="WdR-S8-iXO"/>
+                            <constraint firstItem="pbO-h3-jNb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67.670000000000002" id="c2K-tS-2R3"/>
+                            <constraint firstItem="pbO-h3-jNb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cJu-MT-Hz7"/>
+                            <constraint firstItem="vFk-eB-Rfi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="nBZ-L3-6O0"/>
+                            <constraint firstItem="pbO-h3-jNb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oT6-JF-WiY"/>
+                            <constraint firstItem="vFk-eB-Rfi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="t30-VA-vyB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pbO-h3-jNb" secondAttribute="trailing" constant="67.670000000000002" id="zC6-I2-rgW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
