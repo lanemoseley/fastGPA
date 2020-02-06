@@ -65,7 +65,7 @@ class gpaCalculator {
         var totalCredits = 0.0
         
         for i in gradeInfo {
-            if (i.credits != 0 && i.grade != "---") {
+            if (i.credits != 0 && i.grade != "-") {
                 totalCredits += i.credits
                 gpa += (i.credits * gradeMap[i.grade]!)
             }
