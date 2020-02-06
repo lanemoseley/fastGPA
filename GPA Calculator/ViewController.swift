@@ -148,6 +148,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         old_hours_field.delegate = self
         old_gpa_field.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     /// Author: Lane Moseley
@@ -155,6 +159,7 @@ class ViewController: UIViewController {
     @IBAction func update_pressed(_ sender: Any) {
         var success = false
         
+        // get and validate input
         if let gpa = Double(old_gpa_field.text!) {
             if let hours = Double(old_hours_field.text!) {
                 if gpa >= 0.0 && gpa <= 4.0 && hours >= 0.0 && hours <= 5000.0 {
@@ -167,6 +172,7 @@ class ViewController: UIViewController {
             }
         }
         
+        // if input is invalid, display an error message
         if !success {
             let alertController = UIAlertController(title: "Whoops!", message:
                 "Input is out of range or invalid.", preferredStyle: .alert)
