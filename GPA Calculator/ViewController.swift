@@ -153,14 +153,46 @@ class ViewController: UIViewController {
     /// Author: Lane Moseley
     /// This function will initiate an update of the cumulative GPA
     @IBAction func update_pressed(_ sender: Any) {
-        if (Double(old_gpa_field.text!) == nil || Double(old_hours_field.text!) == nil) { return }
+        var success = false
         
-        gpaCalc.cumulative_gpa = Double(old_gpa_field.text!)!
-        gpaCalc.total_hours = Double(old_hours_field.text!)!
+        if let gpa = Double(old_gpa_field.text!) {
+            if let hours = Double(old_hours_field.text!) {
+                if gpa >= 0.0 && gpa <= 4.0 && hours >= 0.0 && hours <= 5000.0 {
+                    gpaCalc.cumulative_gpa = gpa
+                    gpaCalc.total_hours = hours
+                    updateGPA()
+                    
+                    success = true
+                }
+            }
+        }
         
+        if !success {
+            let alertController = UIAlertController(title: "Whoops!", message:
+                "Input is out of range or invalid.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    /// Author: Lane Moseley
+    /// This function will reset the cumulative GPA
+    @IBAction func reset_pressed(_ sender: Any) {
+        // reset the text fields
+        old_gpa_field.text = nil
+        old_hours_field.text = nil
+        
+        // set the values to zero
+        gpaCalc.cumulative_gpa = 0.0
+        gpaCalc.total_hours = 0.0
+        
+        // update the grades
         updateGPA()
     }
 }
+
+
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
