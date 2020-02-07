@@ -457,7 +457,9 @@
                         <outlet property="grade_6" destination="2i6-Nw-jmU" id="wY4-Zl-uFL"/>
                         <outlet property="old_gpa_field" destination="IYM-L1-mUH" id="B11-2K-uK1"/>
                         <outlet property="old_hours_field" destination="SRa-mL-6tT" id="pHl-2D-JdA"/>
+                        <outlet property="resetButton" destination="RO3-cX-4hW" id="24y-05-nad"/>
                         <outlet property="result" destination="1QR-Vd-Tbc" id="NdH-aH-ZiU"/>
+                        <outlet property="updateButton" destination="3HH-pA-wO1" id="LgH-Mw-NaN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

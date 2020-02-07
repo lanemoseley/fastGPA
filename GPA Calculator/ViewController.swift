@@ -1,7 +1,5 @@
 ///
-/// Program Name: Semester Project, Swift
 /// Author: Lane Moseley
-/// Class: CSC 461, Programming Languages, M-01, Fall, 2019
 /// Language\Compiler: Swift 5.1
 ///
 /// Description: This is a GPA Calculator app developed for iOS.  It allows the user to
@@ -13,7 +11,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    // buttons
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var updateButton: UIButton!
+    
     // credit cells
     @IBOutlet weak var credits_1: UILabel!
     @IBOutlet weak var credits_2: UILabel!
@@ -149,9 +150,41 @@ class ViewController: UIViewController {
         old_hours_field.delegate = self
         old_gpa_field.delegate = self
         
+        // dismiss the keyboard if the user taps outside of the keyboard area
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        
+        // move UITextFields up when keyboard shows
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHideNotification(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    /// This function will move the UITextFields up when the keyboard shows
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        
+        let keyboardFrame = keyboardSize.cgRectValue
+        
+        if self.view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= keyboardFrame.height
+            
+            // Hide the update and reset buttons to simplify the view
+            resetButton.isHidden = true
+            updateButton.isHidden = true
+        }
+    }
+    
+    /// This function will move the UITextFields back to their original location when the keyboard hides
+    @objc func keyboardWillHideNotification(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+            
+            // show the buttons that were hidden when the keyboard expanded
+            resetButton.isHidden = false
+            updateButton.isHidden = false
+        }
     }
     
     /// Author: Lane Moseley
