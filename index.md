@@ -1,6 +1,5 @@
 ---
-layout: page
-exclude: true
+layout: default
 ---
 
 ## Privacy Policy
