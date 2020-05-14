@@ -37,7 +37,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.000" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-Up-XtG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-Up-XtG">
                                         <rect key="frame" x="0.0" y="104.5" width="300" height="26.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                         <nil key="textColor"/>
@@ -442,6 +442,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="credit_stepper_1" destination="gCg-SE-6aB" id="qBR-YR-Mka"/>
+                        <outlet property="credit_stepper_2" destination="oNb-DA-c9f" id="EvI-bX-tdG"/>
+                        <outlet property="credit_stepper_3" destination="25G-79-eRD" id="zJF-kl-2NV"/>
+                        <outlet property="credit_stepper_4" destination="OpJ-2R-cuX" id="Eb9-RC-yAY"/>
+                        <outlet property="credit_stepper_5" destination="mlD-ph-W7J" id="ZUM-P3-qs0"/>
+                        <outlet property="credit_stepper_6" destination="DFa-h3-eU9" id="9Ec-3R-9Cq"/>
                         <outlet property="credits_1" destination="hkP-x6-NUy" id="2eg-Jk-2mg"/>
                         <outlet property="credits_2" destination="DiV-KP-owC" id="hv9-Bk-R85"/>
                         <outlet property="credits_3" destination="umr-ly-QCi" id="75O-He-d3K"/>
@@ -455,6 +461,12 @@
                         <outlet property="grade_4" destination="EI5-re-zWz" id="uPB-EH-pyA"/>
                         <outlet property="grade_5" destination="6cF-k6-MJS" id="Hrb-NS-SFk"/>
                         <outlet property="grade_6" destination="2i6-Nw-jmU" id="wY4-Zl-uFL"/>
+                        <outlet property="grade_stepper_1" destination="319-3Q-OZI" id="PNS-pA-guG"/>
+                        <outlet property="grade_stepper_2" destination="Qm5-Qw-MlJ" id="nAz-L1-dvr"/>
+                        <outlet property="grade_stepper_3" destination="Ljd-zh-Bi6" id="hBv-Lk-S7Z"/>
+                        <outlet property="grade_stepper_4" destination="Jpb-46-s3v" id="jKl-Js-unu"/>
+                        <outlet property="grade_stepper_5" destination="J76-Hq-8jJ" id="ELO-Bu-pBK"/>
+                        <outlet property="grade_stepper_6" destination="4vj-qK-n0o" id="ObM-Rw-94g"/>
                         <outlet property="old_gpa_field" destination="IYM-L1-mUH" id="B11-2K-uK1"/>
                         <outlet property="old_hours_field" destination="SRa-mL-6tT" id="pHl-2D-JdA"/>
                         <outlet property="resetButton" destination="RO3-cX-4hW" id="24y-05-nad"/>

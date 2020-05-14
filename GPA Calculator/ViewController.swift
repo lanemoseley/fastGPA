@@ -14,6 +14,19 @@ class ViewController: UIViewController {
     // buttons
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var updateButton: UIButton!
+    @IBOutlet weak var credit_stepper_1: UIStepper!
+    @IBOutlet weak var credit_stepper_2: UIStepper!
+    @IBOutlet weak var credit_stepper_3: UIStepper!
+    @IBOutlet weak var credit_stepper_4: UIStepper!
+    @IBOutlet weak var credit_stepper_5: UIStepper!
+    @IBOutlet weak var credit_stepper_6: UIStepper!
+    @IBOutlet weak var grade_stepper_1: UIStepper!
+    @IBOutlet weak var grade_stepper_2: UIStepper!
+    @IBOutlet weak var grade_stepper_3: UIStepper!
+    @IBOutlet weak var grade_stepper_4: UIStepper!
+    @IBOutlet weak var grade_stepper_5: UIStepper!
+    @IBOutlet weak var grade_stepper_6: UIStepper!
+    
     
     // credit cells
     @IBOutlet weak var credits_1: UILabel!
@@ -57,7 +70,11 @@ class ViewController: UIViewController {
         result.text = String(format: "%.3f", gpaCalc.getGPA(gradeInfo: grades))
         
         // update cumulative gpa
-        cumulative_result.text = String(format: "%.3f", gpaCalc.new_cumulative_gpa)
+        if gpaCalc.cumulative_gpa == 0.0 && gpaCalc.total_hours == 0.0 {
+            cumulative_result.text = "---"
+        } else {
+            cumulative_result.text = String(format: "%.3f", gpaCalc.new_cumulative_gpa)
+        }
     }
     
     /// Author: Lane Moseley
@@ -147,17 +164,14 @@ class ViewController: UIViewController {
     // viewDidLoad ////
     override func viewDidLoad() {
         super.viewDidLoad()
-        old_hours_field.delegate = self
-        old_gpa_field.delegate = self
-        
+
         // add targets to monitor text fields
         old_hours_field.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
         old_gpa_field.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
         
-        // dismiss the keyboard if the user taps outside of the keyboard area
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+        // add "done" to decimal pad keyboard
+        old_hours_field.addDoneButtonToKeyboard(myAction: #selector(self.old_hours_field.resignFirstResponder))
+        old_gpa_field.addDoneButtonToKeyboard(myAction: #selector(self.old_gpa_field.resignFirstResponder))
         
         // move UITextFields up when keyboard shows
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -174,9 +188,8 @@ class ViewController: UIViewController {
         if self.view.frame.origin.y == 0 {
             self.view.frame.origin.y -= keyboardFrame.height
             
-            // Hide the update and reset buttons to simplify the view
-            resetButton.isHidden = true
-            updateButton.isHidden = true
+            // disable the steppers
+            disableSteppers()
         }
     }
     
@@ -185,16 +198,55 @@ class ViewController: UIViewController {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
             
-            // show the buttons that were hidden when the keyboard expanded
-            resetButton.isHidden = false
-            updateButton.isHidden = false
+            // enable the steppers
+            enableSteppers()
         }
+    }
+    
+    func disableSteppers() {
+        credit_stepper_1.isEnabled = false
+        credit_stepper_2.isEnabled = false
+        credit_stepper_3.isEnabled = false
+        credit_stepper_4.isEnabled = false
+        credit_stepper_5.isEnabled = false
+        credit_stepper_6.isEnabled = false
+        
+        grade_stepper_1.isEnabled = false
+        grade_stepper_2.isEnabled = false
+        grade_stepper_3.isEnabled = false
+        grade_stepper_4.isEnabled = false
+        grade_stepper_5.isEnabled = false
+        grade_stepper_6.isEnabled = false
+    }
+    
+    func enableSteppers() {
+        credit_stepper_1.isEnabled = true
+        credit_stepper_2.isEnabled = true
+        credit_stepper_3.isEnabled = true
+        credit_stepper_4.isEnabled = true
+        credit_stepper_5.isEnabled = true
+        credit_stepper_6.isEnabled = true
+        
+        grade_stepper_1.isEnabled = true
+        grade_stepper_2.isEnabled = true
+        grade_stepper_3.isEnabled = true
+        grade_stepper_4.isEnabled = true
+        grade_stepper_5.isEnabled = true
+        grade_stepper_6.isEnabled = true
+    }
+    
+    func dismissKeyboard() {
+        // dismiss the keyboard if it is up
+        old_gpa_field.resignFirstResponder()
+        old_hours_field.resignFirstResponder()
     }
     
     /// Author: Lane Moseley
     /// This function will initiate an update of the cumulative GPA
     @IBAction func update_pressed(_ sender: Any) {
         var success = false
+        dismissKeyboard()
+        resetButton.isEnabled = true
         
         // get and validate input
         if let gpa = Double(old_gpa_field.text!) {
@@ -222,6 +274,8 @@ class ViewController: UIViewController {
     /// Author: Lane Moseley
     /// This function will reset the cumulative GPA
     @IBAction func reset_pressed(_ sender: Any) {
+        dismissKeyboard()
+        
         // reset the text fields
         old_gpa_field.text = nil
         old_hours_field.text = nil
@@ -237,25 +291,39 @@ class ViewController: UIViewController {
     }
     
     /// Author: Lane Moseley
-    /// This function will enable the update button once both text fields have been edited
+    /// This function will enable buttons once both text fields have been edited, else disable them
     @objc func textFieldsIsNotEmpty(sender: UITextField) {
-        guard let hours = old_hours_field.text, !hours.isEmpty, let gpa = old_gpa_field.text, !gpa.isEmpty
-            else {
-                updateButton.isEnabled = false
-                resetButton.isEnabled = false
-                return
-            }
+        guard let gpa = old_gpa_field.text, let hours = old_hours_field.text else {
+            return
+        }
+
+        if !hours.isEmpty && !gpa.isEmpty {
+            updateButton.isEnabled = true
+        } else {
+            updateButton.isEnabled = false
+        }
         
-        // enable okButton if all conditions are met
-        updateButton.isEnabled = true
-        resetButton.isEnabled = true
+        if !hours.isEmpty || !gpa.isEmpty {
+            resetButton.isEnabled = true
+        } else {
+            if cumulative_result.text == "---" {
+                resetButton.isEnabled = false
+            }
+        }
     }
 }
 
 
-extension ViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+extension UITextField {
+    func addDoneButtonToKeyboard(myAction:Selector?) {
+        let doneToolbar: UIToolbar = UIToolbar()
+        doneToolbar.barStyle = UIBarStyle.default
+
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: myAction)
+
+        doneToolbar.items = [done]
+        doneToolbar.sizeToFit()
+
+        self.inputAccessoryView = doneToolbar
     }
 }
