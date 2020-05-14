@@ -150,6 +150,10 @@ class ViewController: UIViewController {
         old_hours_field.delegate = self
         old_gpa_field.delegate = self
         
+        // add targets to monitor text fields
+        old_hours_field.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        old_gpa_field.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        
         // dismiss the keyboard if the user taps outside of the keyboard area
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
@@ -221,6 +225,8 @@ class ViewController: UIViewController {
         // reset the text fields
         old_gpa_field.text = nil
         old_hours_field.text = nil
+        updateButton.isEnabled = false
+        resetButton.isEnabled = false
         
         // set the values to zero
         gpaCalc.cumulative_gpa = 0.0
@@ -229,8 +235,22 @@ class ViewController: UIViewController {
         // update the grades
         updateGPA()
     }
+    
+    /// Author: Lane Moseley
+    /// This function will enable the update button once both text fields have been edited
+    @objc func textFieldsIsNotEmpty(sender: UITextField) {
+        guard let hours = old_hours_field.text, !hours.isEmpty, let gpa = old_gpa_field.text, !gpa.isEmpty
+            else {
+                updateButton.isEnabled = false
+                resetButton.isEnabled = false
+                return
+            }
+        
+        // enable okButton if all conditions are met
+        updateButton.isEnabled = true
+        resetButton.isEnabled = true
+    }
 }
-
 
 
 extension ViewController: UITextFieldDelegate {
