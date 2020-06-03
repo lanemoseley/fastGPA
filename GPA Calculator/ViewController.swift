@@ -11,38 +11,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // buttons
+    @IBOutlet var creditStepperCollection: Array<UIStepper>?
+    @IBOutlet var gradeStepperCollection: Array<UIStepper>?
+    @IBOutlet var creditLabelCollection: Array<UILabel>?
+    @IBOutlet var gradeLabelCollection: Array<UILabel>?
+
+    // reset, update buttons
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var updateButton: UIButton!
-    @IBOutlet weak var credit_stepper_1: UIStepper!
-    @IBOutlet weak var credit_stepper_2: UIStepper!
-    @IBOutlet weak var credit_stepper_3: UIStepper!
-    @IBOutlet weak var credit_stepper_4: UIStepper!
-    @IBOutlet weak var credit_stepper_5: UIStepper!
-    @IBOutlet weak var credit_stepper_6: UIStepper!
-    @IBOutlet weak var grade_stepper_1: UIStepper!
-    @IBOutlet weak var grade_stepper_2: UIStepper!
-    @IBOutlet weak var grade_stepper_3: UIStepper!
-    @IBOutlet weak var grade_stepper_4: UIStepper!
-    @IBOutlet weak var grade_stepper_5: UIStepper!
-    @IBOutlet weak var grade_stepper_6: UIStepper!
-    
-    
-    // credit cells
-    @IBOutlet weak var credits_1: UILabel!
-    @IBOutlet weak var credits_2: UILabel!
-    @IBOutlet weak var credits_3: UILabel!
-    @IBOutlet weak var credits_4: UILabel!
-    @IBOutlet weak var credits_5: UILabel!
-    @IBOutlet weak var credits_6: UILabel!
-    
-    // grade cells
-    @IBOutlet weak var grade_1: UILabel!
-    @IBOutlet weak var grade_2: UILabel!
-    @IBOutlet weak var grade_3: UILabel!
-    @IBOutlet weak var grade_4: UILabel!
-    @IBOutlet weak var grade_5: UILabel!
-    @IBOutlet weak var grade_6: UILabel!
     
     // past gpa info
     @IBOutlet weak var old_gpa_field: UITextField!
@@ -58,13 +34,13 @@ class ViewController: UIViewController {
     /// Author: Lane Moseley
     /// This function will initiate an update of the resultant GPA
     func updateGPA() {
-        // collect grades and credits
-        let grades: [courseInfo] = [courseInfo(grade: grade_1.text!, credits: Double(credits_1.text!)!),
-                                    courseInfo(grade: grade_2.text!, credits: Double(credits_2.text!)!),
-                                    courseInfo(grade: grade_3.text!, credits: Double(credits_3.text!)!),
-                                    courseInfo(grade: grade_4.text!, credits: Double(credits_4.text!)!),
-                                    courseInfo(grade: grade_5.text!, credits: Double(credits_5.text!)!),
-                                    courseInfo(grade: grade_6.text!, credits: Double(credits_6.text!)!)]
+        guard let creditLabels = creditLabelCollection else { return }
+        guard let gradeLabels = gradeLabelCollection else { return }
+        
+        var grades: [courseInfo] = []
+        for i in 0...5 {
+            grades.append(courseInfo(grade: gradeLabels[i].text!, credits: Double(creditLabels[i].text!)!))
+        }
         
         // update gpa
         result.text = String(format: "%.3f", gpaCalc.getGPA(gradeInfo: grades))
@@ -81,86 +57,30 @@ class ViewController: UIViewController {
     
     /// Author: Lane Moseley
     /// This function updates credits based on stepper value.
-    @IBAction func credit_stepper_1(_ sender: UIStepper) {
-        credits_1.text = String(Int(gpaCalc.credits[Int(sender.value)]))
-        updateGPA()
-    }
-
-    /// Author: Lane Moseley
-    /// This function updates credits based on stepper value.
-    @IBAction func credit_stepper_2(_ sender: UIStepper) {
-        credits_2.text = String(Int(gpaCalc.credits[Int(sender.value)]))
-        updateGPA()
-    }
-    
-    /// Author: Lane Moseley
-    /// This function updates credits based on stepper value.
-    @IBAction func credit_stepper_3(_ sender: UIStepper) {
-        credits_3.text = String(Int(gpaCalc.credits[Int(sender.value)]))
-        updateGPA()
-    }
-    
-    /// Author: Lane Moseley
-    /// This function updates credits based on stepper value.
-    @IBAction func credit_stepper_4(_ sender: UIStepper) {
-        credits_4.text = String(Int(gpaCalc.credits[Int(sender.value)]))
-        updateGPA()
-    }
-    
-    /// Author: Lane Moseley
-    /// This function updates credits based on stepper value.
-    @IBAction func credit_stepper_5(_ sender: UIStepper) {
-        credits_5.text = String(Int(gpaCalc.credits[Int(sender.value)]))
-        updateGPA()
-    }
-
-    /// Author: Lane Moseley
-    /// This function updates credits based on stepper value.
-    @IBAction func credit_stepper_6(_ sender: UIStepper) {
-        credits_6.text = String(Int(gpaCalc.credits[Int(sender.value)]))
-        updateGPA()
+    @IBAction func credit_stepper_pressed(_ sender: UIStepper) {
+        guard let creditLabels = creditLabelCollection else { return }
+        
+        for (i, credit_label) in creditLabels.enumerated() {
+            if i == sender.tag {
+                credit_label.text = String(Int(gpaCalc.credits[Int(sender.value)]))
+                updateGPA()
+                return
+            }
+        }
     }
     
     /// Author: Lane Moseley
     /// This function updates grade based on stepper value.
-    @IBAction func grade_stepper_1(_ sender: UIStepper) {
-        grade_1.text = gpaCalc.grades[Int(sender.value)]
-        updateGPA()
-    }
-
-    /// Author: Lane Moseley
-    /// This function updates grade based on stepper value.
-    @IBAction func grade_stepper_2(_ sender: UIStepper) {
-        grade_2.text = gpaCalc.grades[Int(sender.value)]
-        updateGPA()
-    }
-    
-    /// Author: Lane Moseley
-    /// This function updates grade based on stepper value.
-    @IBAction func grade_stepper_3(_ sender: UIStepper) {
-        grade_3.text = gpaCalc.grades[Int(sender.value)]
-        updateGPA()
-    }
-    
-    /// Author: Lane Moseley
-    /// This function updates grade based on stepper value.
-    @IBAction func grade_stepper_4(_ sender: UIStepper) {
-        grade_4.text = gpaCalc.grades[Int(sender.value)]
-        updateGPA()
-    }
-    
-    /// Author: Lane Moseley
-    /// This function updates grade based on stepper value.
-    @IBAction func grade_stepper_5(_ sender: UIStepper) {
-        grade_5.text = gpaCalc.grades[Int(sender.value)]
-        updateGPA()
-    }
-    
-    /// Author: Lane Moseley
-    /// This function updates grade based on stepper value.
-    @IBAction func grade_stepper_6(_ sender: UIStepper) {
-        grade_6.text = gpaCalc.grades[Int(sender.value)]
-        updateGPA()
+    @IBAction func grade_stepper_pressed(_ sender: UIStepper) {
+        guard let gradeLabels = gradeLabelCollection else { return }
+        
+        for (i, grade_label) in gradeLabels.enumerated() {
+            if i == sender.tag {
+                grade_label.text = gpaCalc.grades[Int(sender.value)]
+                updateGPA()
+                return
+            }
+        }
     }
     
     // viewDidLoad ////
@@ -206,35 +126,29 @@ class ViewController: UIViewController {
     }
     
     func disableSteppers() {
-        credit_stepper_1.isEnabled = false
-        credit_stepper_2.isEnabled = false
-        credit_stepper_3.isEnabled = false
-        credit_stepper_4.isEnabled = false
-        credit_stepper_5.isEnabled = false
-        credit_stepper_6.isEnabled = false
+        guard let creditSteppers = creditStepperCollection else { return }
+        guard let gradeSteppers = gradeStepperCollection else { return }
         
-        grade_stepper_1.isEnabled = false
-        grade_stepper_2.isEnabled = false
-        grade_stepper_3.isEnabled = false
-        grade_stepper_4.isEnabled = false
-        grade_stepper_5.isEnabled = false
-        grade_stepper_6.isEnabled = false
+        for credit_stepper in creditSteppers {
+            credit_stepper.isEnabled = false
+        }
+        
+        for grade_stepper in gradeSteppers {
+            grade_stepper.isEnabled = false
+        }
     }
     
     func enableSteppers() {
-        credit_stepper_1.isEnabled = true
-        credit_stepper_2.isEnabled = true
-        credit_stepper_3.isEnabled = true
-        credit_stepper_4.isEnabled = true
-        credit_stepper_5.isEnabled = true
-        credit_stepper_6.isEnabled = true
+        guard let creditSteppers = creditStepperCollection else { return }
+        guard let gradeSteppers = gradeStepperCollection else { return }
         
-        grade_stepper_1.isEnabled = true
-        grade_stepper_2.isEnabled = true
-        grade_stepper_3.isEnabled = true
-        grade_stepper_4.isEnabled = true
-        grade_stepper_5.isEnabled = true
-        grade_stepper_6.isEnabled = true
+        for credit_stepper in creditSteppers {
+            credit_stepper.isEnabled = true
+        }
+        
+        for grade_stepper in gradeSteppers {
+            grade_stepper.isEnabled = true
+        }
     }
     
     func dismissKeyboard() {
@@ -309,35 +223,42 @@ class ViewController: UIViewController {
     }
     
     func reset_steppers() {
-        // reset credit fields
-        credits_1.text = "4"
-        credits_2.text = "0"
-        credits_3.text = "0"
-        credits_4.text = "0"
-        credits_5.text = "0"
-        credits_6.text = "0"
+        guard let creditLabels = creditLabelCollection else { return }
+        guard let gradeLabels = gradeLabelCollection else { return }
+        guard let creditSteppers = creditStepperCollection else { return }
+        guard let gradeSteppers = gradeStepperCollection else { return }
         
-        // reset grade fields
-        grade_1.text = "A"
-        grade_2.text = "-"
-        grade_3.text = "-"
-        grade_4.text = "-"
-        grade_5.text = "-"
-        grade_6.text = "-"
-
-        credit_stepper_1.value = 4
-        credit_stepper_2.value = 0
-        credit_stepper_3.value = 0
-        credit_stepper_4.value = 0
-        credit_stepper_5.value = 0
-        credit_stepper_6.value = 0
+        for (i, credit_label) in creditLabels.enumerated() {
+            if i == 0 {
+                creditLabels[0].text = "4"
+            } else {
+                credit_label.text = "0"
+            }
+        }
         
-        grade_stepper_1.value = 0
-        grade_stepper_2.value = 1
-        grade_stepper_3.value = 1
-        grade_stepper_4.value = 1
-        grade_stepper_5.value = 1
-        grade_stepper_6.value = 1
+        for (i, grade_label) in gradeLabels.enumerated() {
+            if i == 0 {
+                gradeLabels[0].text = "A"
+            } else {
+                grade_label.text = "-"
+            }
+        }
+        
+        for (i, credit_stepper) in creditSteppers.enumerated() {
+            if i == 0 {
+                creditSteppers[0].value = 4
+            } else {
+                credit_stepper.value = 0
+            }
+        }
+        
+        for (i, grade_stepper) in gradeSteppers.enumerated() {
+            if i == 0 {
+                gradeSteppers[0].value = 0
+            } else {
+                grade_stepper.value = 1
+            }
+        }
         
         updateGPA()
         resetButton.isEnabled = false
