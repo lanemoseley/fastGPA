@@ -75,6 +75,8 @@ class ViewController: UIViewController {
         } else {
             cumulative_result.text = String(format: "%.3f", gpaCalc.new_cumulative_gpa)
         }
+        
+        resetButton.isEnabled = true
     }
     
     /// Author: Lane Moseley
@@ -265,15 +267,31 @@ class ViewController: UIViewController {
         if !success {
             let alertController = UIAlertController(title: "Whoops!", message:
                 "Input is out of range or invalid.", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: {
+                (UIAlertAction) in self.reset_fields()
+            }))
 
             self.present(alertController, animated: true, completion: nil)
+        } else {
+            updateButton.isEnabled = false
         }
     }
     
     /// Author: Lane Moseley
     /// This function will reset the cumulative GPA
     @IBAction func reset_pressed(_ sender: Any) {
+        guard let gpa = old_gpa_field.text, let hours = old_hours_field.text else {
+            return
+        }
+        
+        if !hours.isEmpty || !gpa.isEmpty {
+            reset_fields()
+        } else {
+            reset_steppers()
+        }
+    }
+    
+    func reset_fields() {
         dismissKeyboard()
         
         // reset the text fields
@@ -288,6 +306,41 @@ class ViewController: UIViewController {
         
         // update the grades
         updateGPA()
+    }
+    
+    func reset_steppers() {
+        // reset credit fields
+        credits_1.text = "4"
+        credits_2.text = "0"
+        credits_3.text = "0"
+        credits_4.text = "0"
+        credits_5.text = "0"
+        credits_6.text = "0"
+        
+        // reset grade fields
+        grade_1.text = "A"
+        grade_2.text = "-"
+        grade_3.text = "-"
+        grade_4.text = "-"
+        grade_5.text = "-"
+        grade_6.text = "-"
+
+        credit_stepper_1.value = 4
+        credit_stepper_2.value = 0
+        credit_stepper_3.value = 0
+        credit_stepper_4.value = 0
+        credit_stepper_5.value = 0
+        credit_stepper_6.value = 0
+        
+        grade_stepper_1.value = 0
+        grade_stepper_2.value = 1
+        grade_stepper_3.value = 1
+        grade_stepper_4.value = 1
+        grade_stepper_5.value = 1
+        grade_stepper_6.value = 1
+        
+        updateGPA()
+        resetButton.isEnabled = false
     }
     
     /// Author: Lane Moseley
