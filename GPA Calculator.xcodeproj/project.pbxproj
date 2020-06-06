@@ -15,7 +15,18 @@
 		2C5C750C238E397800A1A141 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5C750A238E397800A1A141 /* LaunchScreen.storyboard */; };
 		2C5C7514238E50B200A1A141 /* gpaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C7513238E50B200A1A141 /* gpaCalculator.swift */; };
 		2C5C7516238E5E1C00A1A141 /* courseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C7515238E5E1C00A1A141 /* courseInfo.swift */; };
+		2C680654248B4A7100CBEB2A /* FastGPA_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C680653248B4A7100CBEB2A /* FastGPA_Tests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C680656248B4A7100CBEB2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C5C74F4238E397200A1A141 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C5C74FB238E397300A1A141;
+			remoteInfo = "GPA Calculator";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2C5C74FC238E397300A1A141 /* Fast GPA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fast GPA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,10 +39,20 @@
 		2C5C750D238E397800A1A141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C5C7513238E50B200A1A141 /* gpaCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpaCalculator.swift; sourceTree = "<group>"; };
 		2C5C7515238E5E1C00A1A141 /* courseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseInfo.swift; sourceTree = "<group>"; };
+		2C680651248B4A7100CBEB2A /* FastGPA Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FastGPA Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C680653248B4A7100CBEB2A /* FastGPA_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastGPA_Tests.swift; sourceTree = "<group>"; };
+		2C680655248B4A7100CBEB2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2C5C74F9238E397300A1A141 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C68064E248B4A7100CBEB2A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				2C5C74FE238E397300A1A141 /* GPA Calculator */,
+				2C680652248B4A7100CBEB2A /* FastGPA Tests */,
 				2C5C74FD238E397300A1A141 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				2C5C74FC238E397300A1A141 /* Fast GPA.app */,
+				2C680651248B4A7100CBEB2A /* FastGPA Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +94,15 @@
 				2C5C7515238E5E1C00A1A141 /* courseInfo.swift */,
 			);
 			path = "GPA Calculator";
+			sourceTree = "<group>";
+		};
+		2C680652248B4A7100CBEB2A /* FastGPA Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2C680653248B4A7100CBEB2A /* FastGPA_Tests.swift */,
+				2C680655248B4A7100CBEB2A /* Info.plist */,
+			);
+			path = "FastGPA Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,19 +125,42 @@
 			productReference = 2C5C74FC238E397300A1A141 /* Fast GPA.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2C680650248B4A7100CBEB2A /* FastGPA Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C68065A248B4A7100CBEB2A /* Build configuration list for PBXNativeTarget "FastGPA Tests" */;
+			buildPhases = (
+				2C68064D248B4A7100CBEB2A /* Sources */,
+				2C68064E248B4A7100CBEB2A /* Frameworks */,
+				2C68064F248B4A7100CBEB2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C680657248B4A7100CBEB2A /* PBXTargetDependency */,
+			);
+			name = "FastGPA Tests";
+			productName = "FastGPA Tests";
+			productReference = 2C680651248B4A7100CBEB2A /* FastGPA Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2C5C74F4238E397200A1A141 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Lane Moseley";
 				TargetAttributes = {
 					2C5C74FB238E397300A1A141 = {
 						CreatedOnToolsVersion = 11.1;
 						ProvisioningStyle = Automatic;
+					};
+					2C680650248B4A7100CBEB2A = {
+						CreatedOnToolsVersion = 11.5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2C5C74FB238E397300A1A141;
 					};
 				};
 			};
@@ -123,6 +178,7 @@
 			projectRoot = "";
 			targets = (
 				2C5C74FB238E397300A1A141 /* GPA Calculator */,
+				2C680650248B4A7100CBEB2A /* FastGPA Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +191,13 @@
 				2C5C750C238E397800A1A141 /* LaunchScreen.storyboard in Resources */,
 				2C5C7509238E397800A1A141 /* Assets.xcassets in Resources */,
 				2C5C7507238E397300A1A141 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C68064F248B4A7100CBEB2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +216,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C68064D248B4A7100CBEB2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C680654248B4A7100CBEB2A /* FastGPA_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C680657248B4A7100CBEB2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C5C74FB238E397300A1A141 /* GPA Calculator */;
+			targetProxy = 2C680656248B4A7100CBEB2A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2C5C7505238E397300A1A141 /* Main.storyboard */ = {
@@ -320,6 +399,40 @@
 			};
 			name = Release;
 		};
+		2C680658248B4A7100CBEB2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89J68TXY4C;
+				INFOPLIST_FILE = "FastGPA Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lanemoseley.FastGPA-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fast GPA.app/Fast GPA";
+			};
+			name = Debug;
+		};
+		2C680659248B4A7100CBEB2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89J68TXY4C;
+				INFOPLIST_FILE = "FastGPA Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lanemoseley.FastGPA-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fast GPA.app/Fast GPA";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -337,6 +450,15 @@
 			buildConfigurations = (
 				2C5C7511238E397800A1A141 /* Debug */,
 				2C5C7512238E397800A1A141 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C68065A248B4A7100CBEB2A /* Build configuration list for PBXNativeTarget "FastGPA Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C680658248B4A7100CBEB2A /* Debug */,
+				2C680659248B4A7100CBEB2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
