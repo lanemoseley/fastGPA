@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     /*
      * Constants
      */
@@ -41,14 +41,28 @@ class ViewController: UIViewController {
         // add targets to monitor text fields
         old_hours_field.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
         old_gpa_field.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
-        
-        // add "done" to decimal pad keyboard
-        old_hours_field.addDoneButtonToKeyboard(myAction: #selector(self.old_hours_field.resignFirstResponder))
-        old_gpa_field.addDoneButtonToKeyboard(myAction: #selector(self.old_gpa_field.resignFirstResponder))
+
+        old_hours_field.delegate = self
+        old_gpa_field.delegate = self
         
         // move UITextFields up when keyboard shows
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHideNotification(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func can_reset_semester() -> Bool {
+        guard let creditLabels = creditLabelCollection else { return false }
+        guard let gradeLabels = gradeLabelCollection else { return false }
+                
+        for i in 0..<NUM_FIELDS {
+            if i == 0 && ( creditLabels[i].text != "4" || gradeLabels[i].text != "A" ) {
+                return true
+            } else if i > 0 && ( creditLabels[i].text != "0" || gradeLabels[i].text != "-" ) {
+                return true
+            }
+        }
+        
+        return false
     }
     
     @IBAction func credit_stepper_pressed(_ sender: UIStepper) {
@@ -59,7 +73,7 @@ class ViewController: UIViewController {
                 credit_label.text = String(Int(CREDITS[Int(sender.value)]))
                 updateGPA()
                 updateCumulativeGPA()
-                resetButton.isEnabled = true
+                resetButton.isEnabled = can_reset_semester()
                 return
             }
         }
@@ -99,7 +113,7 @@ class ViewController: UIViewController {
                 grade_label.text = GRADES[Int(sender.value)]
                 updateGPA()
                 updateCumulativeGPA()
-                resetButton.isEnabled = true
+                resetButton.isEnabled = can_reset_semester()
                 return
             }
         }
@@ -128,13 +142,13 @@ class ViewController: UIViewController {
         }
     }
     
-    func reset_fields() {
+    func reset_cumulative() {
         dismissKeyboard()
         old_gpa_field.text = nil
         old_hours_field.text = nil
         cumulative_result.text = "---"
         updateButton.isEnabled = false
-        resetButton.isEnabled = false
+        resetButton.isEnabled = can_reset_semester()
         reset_gpa()
     }
     
@@ -142,7 +156,6 @@ class ViewController: UIViewController {
         gpaCalc.reset()
         updateGPA()
         updateCumulativeGPA()
-        resetButton.isEnabled = true
     }
     
     @IBAction func reset_pressed(_ sender: Any) {
@@ -153,7 +166,8 @@ class ViewController: UIViewController {
         if cumulative_result.text == "---" && gpa.isEmpty && hours.isEmpty {
             reset_steppers()
         } else {
-            reset_fields()
+            reset_cumulative()
+            resetButton.isEnabled = can_reset_semester()
         }
     }
     
@@ -179,7 +193,7 @@ class ViewController: UIViewController {
         
         updateGPA()
         updateCumulativeGPA()
-        resetButton.isEnabled = false
+        resetButton.isEnabled = can_reset_semester()
     }
     
     @objc func textFieldsIsNotEmpty(sender: UITextField) {
@@ -202,6 +216,11 @@ class ViewController: UIViewController {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     func updateCumulativeGPA() {
         guard let gpa = Double(old_gpa_field.text!), let hours = Double(old_hours_field.text!) else {
             return
@@ -216,7 +235,7 @@ class ViewController: UIViewController {
         } else {
             let alertController = UIAlertController(title: "Whoops!", message: "Input is out of range or invalid.", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: {
-                (UIAlertAction) in self.reset_fields()
+                (UIAlertAction) in self.reset_cumulative()
             }))
             
             self.present(alertController, animated: true, completion: nil)
@@ -239,22 +258,5 @@ class ViewController: UIViewController {
         dismissKeyboard()
         resetButton.isEnabled = true
         updateCumulativeGPA()
-    }
-}
-
-/*
- * Extensions
- */
-extension UITextField {
-    func addDoneButtonToKeyboard(myAction:Selector?) {
-        let doneToolbar: UIToolbar = UIToolbar()
-        doneToolbar.barStyle = UIBarStyle.default
-
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: myAction)
-
-        doneToolbar.items = [done]
-        doneToolbar.sizeToFit()
-
-        self.inputAccessoryView = doneToolbar
     }
 }
