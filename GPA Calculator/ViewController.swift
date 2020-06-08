@@ -119,6 +119,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func invalid_input() {
+        let alertController = UIAlertController(title: "Whoops!", message: "Input is out of range or invalid.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: {
+            (UIAlertAction) in self.reset_cumulative()
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @objc func keyboardWillHideNotification(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
@@ -223,6 +232,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func updateCumulativeGPA() {
         guard let gpa = Double(old_gpa_field.text!), let hours = Double(old_hours_field.text!) else {
+            if !old_hours_field.text!.isEmpty || !old_gpa_field.text!.isEmpty {
+                invalid_input()
+            }
+            
             return
         }
         
@@ -233,12 +246,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             updateButton.isEnabled = false
             return
         } else {
-            let alertController = UIAlertController(title: "Whoops!", message: "Input is out of range or invalid.", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: {
-                (UIAlertAction) in self.reset_cumulative()
-            }))
-            
-            self.present(alertController, animated: true, completion: nil)
+            invalid_input()
         }
     }
     
